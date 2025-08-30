@@ -1,1 +1,7 @@
-package test_gitleaks
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Hello, World!")
+}
