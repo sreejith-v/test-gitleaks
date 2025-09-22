@@ -59,7 +59,12 @@ remove_paths() {
     exit 0
   fi
 
-  git filter-repo $(for path in "${PATHS_TO_REMOVE[@]}"; do echo "--path $path"; done) --invert-paths
+  args=()
+  for path in "${PATHS_TO_REMOVE[@]}"; do
+    args+=(--path "$path")
+  done
+
+  git filter-repo "${args[@]}" --invert-paths
 
   echo "Done. Remember to force-push the updated repo:"
   echo "  git push origin --force --all"
