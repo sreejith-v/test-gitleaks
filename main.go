@@ -8,4 +8,10 @@ func main() {
 	fmt.Println(token)
 	secretToken := GenerateFakeJWT()
 	fmt.Println("Secret Token:", secretToken)
+	hello()
+}
+
+func hello() {
+	token := "REMOVED_TOKEN"
+	fmt.Println("Hello, World!", token)
 }
